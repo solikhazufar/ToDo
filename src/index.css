@@ -1,0 +1,69 @@
+@font-face {
+  font-family: Lato;
+  src: url("./Fonts/lato-v25-latin-regular.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Lato;
+  src: url("./Fonts/lato-v25-latin-700.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  font-family: Lato, sans-serif;
+  color: #293247;
+  background: #f4f6fb;
+  --text-color: #293247;
+  --muted-color: #7a8496;
+  --surface-color: #fff;
+  --page-color: #f4f6fb;
+  --border-color: #e3e7ef;
+  --purple-violet: #5b61d6;
+}
+
+:root[data-theme="dark"] {
+  color: #eef1f8;
+  background: #171c27;
+
+  --text-color: #eef1f8;
+  --muted-color: #a4adbd;
+  --surface-color: #242b38;
+  --page-color: #171c27;
+  --border-color: #3b4454;
+  --purple-violet: #8589f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--page-color);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--page-color);
+  color: var(--text-color);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgb(91 97 214 / 28%);
+  outline-offset: 2px;
+}

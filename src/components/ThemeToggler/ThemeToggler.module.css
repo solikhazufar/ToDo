@@ -1,0 +1,20 @@
+.button {
+  display: inline-grid;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  background: var(--surface-color);
+  color: var(--text-color);
+  font-size: 23px;
+  cursor: pointer;
+  box-shadow: 0 5px 16px rgb(34 45 70 / 6%);
+  transition: transform 150ms ease, background-color 150ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  background: var(--page-color);
+}

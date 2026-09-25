@@ -1,0 +1,67 @@
+/* Orqa tomonni qoraytiramiz. Modal hamma narsaning ustida, ekran o‘rtasida tursin. */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Modal ichidagi narsalarni tagma-tag qo‘yamiz. Ranglarini tanlangan Light/Dark’dan olamiz. */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  padding: 18px 30px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Modal sarlavhasi bilan input orasini ochamiz. */
+.content > h2 {
+  margin-bottom: 25px;
+}
+
+/* Inputni modal eniga yoyamiz. Tugmalar pastroqda tursin deb tagidan joy qoldiramiz. */
+.content > input {
+  width: 100%;
+  margin-bottom: 128px;
+  padding: 11px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--text-color);
+}
+
+/* Cancel chapda, Apply yoki Save o‘ngda tursin. */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 18px;
+}
+
+/* Ikkala tugmaning ichidan joy ochamiz, burchaklarini yumaloqlaymiz. */
+.actions > button {
+  padding: 10px 22px;
+  border-radius: 5px;
+}
+
+/* Cancel tugmasining foni yo‘q, yozuvi va chegarasi binafsha. */
+.cancelButton {
+  border: 1px solid var(--purple-violet);
+  background-color: transparent;
+  color: var(--purple-violet);
+}
+
+/* Apply/Save tugmasining foni binafsha, yozuvi oq bo‘ladi. */
+.saveButton {
+  border: none;
+  background-color: var(--purple-violet);
+  color: #fff;
+}
