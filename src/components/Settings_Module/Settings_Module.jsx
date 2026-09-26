@@ -10,11 +10,11 @@ function Settings_Module() {
       <button
         type="button"
         className={styles.openButton}
-        aria-label="Open settings"
-        aria-expanded={isOpen}
+        label="Open settings"
+        expanded={isOpen}
         onClick={() => setIsOpen(true)}
       >
-        <IoSettingsSharp aria-hidden="true" />
+        <IoSettingsSharp hidden="true" />
       </button>
 
       {isOpen && (
@@ -24,16 +24,16 @@ function Settings_Module() {
             if (event.target === event.currentTarget) setIsOpen(false);
           }}
         >
-          <section className={styles.modal} role="dialog" aria-modal="true" aria-labelledby="settings-title">
+          <section className={styles.modal} role="dialog" modal="true" labelledby="settings-title">
             <header className={styles.header}>
               <h2 id="settings-title">Settings</h2>
               <button
                 type="button"
                 className={styles.iconButton}
-                aria-label="Close settings"
+                label="Close settings"
                 onClick={() => setIsOpen(false)}
               >
-                <IoClose aria-hidden="true" />
+                <IoClose hidden="true" />
               </button>
             </header>
 

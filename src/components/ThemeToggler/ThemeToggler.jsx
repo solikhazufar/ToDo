@@ -22,7 +22,7 @@ function ThemeToggler() {
     <button
       type="button"
       className={styles.button}
-      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+      label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
       onClick={toggleTheme}
     >
       {theme === "dark" ? <MdDarkMode /> : <CiLight />}

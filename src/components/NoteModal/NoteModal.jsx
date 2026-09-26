@@ -11,7 +11,7 @@ function NoteModal({ note, onClose, onSave }) {
         <h2>{isEditing ? "Edit Note" : "New Note"}</h2>
         <input
           type="text"
-          aria-label="Note name"
+          label="Note name"
           placeholder="Input your note..."
           value={name}
           onChange={(event) => setName(event.target.value)}

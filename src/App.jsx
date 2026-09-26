@@ -19,14 +19,12 @@ function App() {
 
   const handleSaveNote = (text) => {
     const newNote = { id: crypto.randomUUID(), text, completed: false };
-    setNotes((currentNotes) => [...currentNotes, newNote]);
+    setNotes((currentNotes) => [newNote , ...currentNotes]);
   };
 
   const toggleNote = (id) => {
     setNotes((currentNotes) =>
-      // map makes a new array, changing only the note with the matching id.
       currentNotes.map((note) =>
-        // Copy the note's other values, then reverse completed true/false.
         note.id === id ? { ...note, completed: !note.completed } : note,
       ),
     );
@@ -35,6 +33,12 @@ function App() {
   const deleteNote = (id) => {
     setNotes((currentNotes) => currentNotes.filter((note) => note.id !== id));
   };
+
+  const deleteAllNotes = () => {
+    setNotes([]);
+    return;
+  }
+
 
   return (
     <div className={styles.app}>
@@ -50,9 +54,10 @@ function App() {
         
         <NoteInput onAdd={handleSaveNote} />
 
-        <section className={styles.notesSection} aria-label="Your tasks">
+        <section className={styles.notesSection} label="Your tasks">
           <div className={styles.listHeading}>
             <span>{notes.length} {notes.length === 1 ? "task" : "tasks"}</span>
+            <button className= {styles.Delete_btn} onClick={deleteAllNotes}>Delete All</button>
           </div>
 
           
@@ -68,7 +73,7 @@ function App() {
                     className={`${styles.completeButton} ${note.completed ? styles.completed : ""}`}
                     onClick={() => toggleNote(note.id)}
                   >
-                    {note.completed && <IoCheckmark aria-hidden="true" />}
+                    {note.completed && <IoCheckmark hidden="true" />}
                   </button>
                   <span className={note.completed ? styles.noteTextCompleted : styles.noteText}>
                     {note.text}
@@ -76,10 +81,10 @@ function App() {
                   <button
                     type="button"
                     className={styles.deleteButton}
-                    aria-label={`Delete ${note.text}`}
+                    label={`Delete ${note.text}`}
                     onClick={() => deleteNote(note.id)}
                   >
-                    <IoClose aria-hidden="true" />
+                    <IoClose hidden="true" />
                   </button>
                 </li>
               ))}
